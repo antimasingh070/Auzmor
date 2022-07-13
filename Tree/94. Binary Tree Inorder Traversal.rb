@@ -9,6 +9,16 @@
 # end
 # @param {TreeNode} root
 # @return {Integer[]}
+
+def inorder_traversal(root, ans=[])
+  return [] if root.nil?
+  inorder_traversal(root.left, ans)
+  ans << root.val
+  inorder_traversal(root.right, ans)
+  ans
+end
+
+#Implementation by stack
 def inorder_traversal(root)
     stack, ans = [], []
   while !stack.empty? || !root.nil?
