@@ -1,0 +1,16 @@
+# @param {Integer[]} nums
+# @param {Integer} target
+# @return {Integer}
+def search_insert(nums, target)
+    nums.each_with_index do |num, index|
+    if target == num
+      return index
+    elsif target > num
+      next
+    else # target < num
+      return index
+    end
+  end
+
+  nums.size
+end
