@@ -1,0 +1,17 @@
+# @param {Integer[]} nums
+# @param {Integer} val
+# @return {Integer}
+def remove_element(nums, val)
+  result_length = nums.length
+  shift_length = 0
+  nums.each_with_index do |num, i|
+    next unless num == val
+
+    nums.delete_at(i)
+    nums.unshift('removed')
+    result_length -= 1
+    shift_length += 1
+  end
+  nums.shift(shift_length)
+  result_length
+end
