@@ -1,0 +1,18 @@
+# @param {Integer[]} digits
+# @return {Integer[]}
+def plus_one(digits)
+  digits.join.to_i.succ.to_s.chars.map(&:to_i)
+end
+
+
+# Or waste your time and wirte this.
+# def plus_one_a(digits)
+#   (digits.size-1).downto(0) do |i|
+#     if digits[i] < 9
+#       digits[i] += 1
+#       return digits
+#     end
+#     digits[i] = 0
+#   end
+#   digits.unshift 1
+# end
